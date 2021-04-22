@@ -1,0 +1,31 @@
+﻿@page
+@model FluentValidationDemo.Pages.Books.IndexModel
+@{
+}
+
+
+<h1>Books</h1>
+<hr />
+<a asp-page="./create" class="btn btn-dark">New Book</a>
+<table class="table table-borderless">
+    <thead>
+        <tr>
+             <th>Name</th>
+            <th>Year</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var book in Model.Books)
+        {
+            <tr>           
+                <td>@book.Name</td>
+                <td>@book.Year</td>
+                <td>$ @book.Price</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
