@@ -1,3 +1,5 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using FluentValidationDemo.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +29,8 @@ namespace FluentValidationDemo
             services.AddDbContext<BookDbContext>(options =>
             options.UseSqlite("Data Source=app.sqlite"));
 
-            services.AddRazorPages();
+            services.AddRazorPages().AddFluentValidation();
+            services.AddTransient<IValidator<Book>, BookValidation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
