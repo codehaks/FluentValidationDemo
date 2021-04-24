@@ -22,7 +22,9 @@ namespace FluentValidationDemo.Data
     {
         public BookValidation()
         {
-            RuleFor(u => u.Name).NotEmpty().WithMessage("Name is required.");
+            RuleFor(u => u.Name)
+                .NotEmpty()
+                .WithMessage("Name is required.");
 
             RuleFor(u => u.Year).NotEmpty().WithMessage("Year is required.")
                 .InclusiveBetween(2010, 2021).WithMessage("Year must be between 2010 and 2021 ");
