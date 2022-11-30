@@ -29,8 +29,8 @@ namespace FluentValidationDemo.Data
             RuleFor(u => u.Year).NotEmpty().WithMessage("Year is required.")
                 .InclusiveBetween(2010, 2021).WithMessage("Year must be between 2010 and 2021 ");
 
-            RuleFor(u => u.Price).NotEmpty().WithMessage("Price is required.")
-              .InclusiveBetween(1, 1000).WithMessage("Price must be between $1 and $1000 ");
+            RuleFor(u => u.Price).NotEmpty().WithMessage("Price is required .")
+              .InclusiveBetween(1, 100).WithMessage("Price must be between $1 and $100 ");
         }
     }
 }
