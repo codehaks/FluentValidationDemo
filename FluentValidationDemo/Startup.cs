@@ -28,8 +28,8 @@ namespace FluentValidationDemo
         {
             services.AddDbContext<BookDbContext>(options =>
             options.UseSqlite("Data Source=app.sqlite"));
-
-            services.AddRazorPages().AddFluentValidation();
+            services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
+            services.AddRazorPages();
             services.AddTransient<IValidator<Book>, BookValidation>();
         }
 
